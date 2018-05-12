@@ -41,6 +41,9 @@ public class Panel implements ActionListener {
         JLabel l=new JLabel();
 
         j.add(l);
+
+
+//		 Assigning Buttons For MainPage
         JButton firstButton=new JButton("1");
         JButton secondButton=new JButton("2");
         JButton thirdButton=new JButton("3");
@@ -50,6 +53,9 @@ public class Panel implements ActionListener {
         JButton seventhButton=new JButton("7");
         JButton eigthButton=new JButton("8");
         JButton ninthButton=new JButton("9");
+
+
+//		 Assigning Button Size for Better UI
         firstButton.setPreferredSize(new Dimension(55,55));
         secondButton.setPreferredSize(new Dimension(55,55));
         thirdButton.setPreferredSize(new Dimension(55,55));
@@ -81,6 +87,9 @@ public class Panel implements ActionListener {
         j.setSize(230,300);
         j.setVisible(true);
 
+
+
+//		 Adding Separate Action Listener for each button For Independent Execution
         ResetG.addActionListener(new ActionListener() {
 
             @Override
@@ -97,18 +106,12 @@ public class Panel implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent arg0) {
 
-                //setBackground(Color.black);
-                //getContentPane().setBackground(Color.GREEN);
-//
-
-
-
                 if(PlayerChange%2!=0)
                 {
                     firstButton.setBackground(Color.BLUE);
                     firstButton.setForeground(Color.red);
                     firstVal=1;
-                    //JOptionPane.showMessageDialog(null,"First case clicked in button");
+//					JOptionPane.showMessageDialog(null,"First case clicked in button");  Checking Button for Working Condition
                 }
                 else {
                     firstButton.setBackground(Color.GREEN);
@@ -327,10 +330,16 @@ public class Panel implements ActionListener {
 
     }
 
+
+//	 For Counting User Number
+
+
     public void PlayerManipulation() {
 
         PlayerChange++;
 //		 JOptionPane.showMessageDialog(null, PlayerChange);
+
+//		 Calculating Player Number using Odd and Even Numbers
 
 
         if(PlayerChange%2!=0)
@@ -342,10 +351,7 @@ public class Panel implements ActionListener {
             Log.setText("Player Two CLicked");
         }
 
-
-//		 JOptionPane.showMessageDialog(null, fir);
-//		 JOptionPane.showMessageDialog(null, sec);
-//		 JOptionPane.showMessageDialog(null, thi);
+//	     Checking for Winning Conditions
         if(firstVal==secondVal&&secondVal==thirdVal)
         {
             if(firstVal==1)
@@ -440,9 +446,12 @@ public class Panel implements ActionListener {
     }
 
 
+//	 Assigning Random Integers to these to skip First Time Check Condition(Since Default is Zero)
+
+
     public void FirstReset()
     {
-        //Assigning Random Integers to these to skip First Time Check Condition(Since Default is Zero)
+
 
         firstVal=4;
         secondVal=5;
@@ -455,6 +464,9 @@ public class Panel implements ActionListener {
         ninthVal=13;
         PlayerChange=0;
     }
+
+
+    //	 This Will be Called on Satisfying Winning Conditions
     public void First()
     {
         JOptionPane.showMessageDialog(null, "Second Player Wins :)");
@@ -468,37 +480,27 @@ public class Panel implements ActionListener {
         Reset();
     }
 
-
-
-
-    public void Panel2()
-    {
-
-
-    }
-
     public static void main(String args[])
     {
         Panel p=new Panel();
         p.Panel1();
 
-        p.Panel2();
+
 
 
     }
+
+
     @Override
-
-
-    public void actionPerformed(ActionEvent evt) {
-
-
+    public void actionPerformed(ActionEvent arg0) {
+        // TODO Auto-generated method stub
 
     }
 }
 
 
+//    GAME CAN BE REDISIGNED USING BELOW SOURCE CODE LIKE ADDING ICONS AND ETC
 
-//Not Working Code
 
 //int t= (Integer) evt.getSource();
 //String t=(String) evt.getSource();
@@ -518,5 +520,7 @@ public class Panel implements ActionListener {
 
 
 // Additional FrameWork
+
+
 // JButton button = new JButton();
 // button.setIcon(new ImageIcon("yourButtonImage.jpg"));
