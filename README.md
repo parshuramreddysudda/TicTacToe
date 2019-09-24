@@ -1,2 +1,3 @@
 # TicTacToe
-Develop Two Player TicTacToe game 
+Two Player TicTacToe game in Java
+Developed in Applets
